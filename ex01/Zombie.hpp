@@ -6,7 +6,7 @@
 /*   By: alama <alama@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 18:36:38 by alama             #+#    #+#             */
-/*   Updated: 2025/03/26 20:49:41 by alama            ###   ########.fr       */
+/*   Updated: 2025/03/26 20:59:57 by alama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include <string>
 #include <iostream>
 #include <cstdlib>
-#include <new>
 
 class	Zombie {
 
@@ -24,6 +23,7 @@ public :
 	Zombie();
 	Zombie(std::string name);
 	void		announce();
+	void		set_name(std::string name);
 	~Zombie();
 
 private :
@@ -31,7 +31,6 @@ private :
 	
 };
 
-Zombie*		newZombie(std::string name);
-void		randomChump(std::string name);
+Zombie*	zombieHorde(int n, std::string name);
 
 #endif

@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alama <alama@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/24 18:36:38 by alama             #+#    #+#             */
-/*   Updated: 2025/03/26 20:49:41 by alama            ###   ########.fr       */
+/*   Created: 2025/03/26 20:24:00 by alama             #+#    #+#             */
+/*   Updated: 2025/03/26 21:25:31 by alama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	__ZOMBIE_H__
-#define	__ZOMBIE_H__
+#include "Zombie.hpp"
 
-#include <string>
-#include <iostream>
-#include <cstdlib>
-#include <new>
+Zombie*	zombieHorde(int n, std::string name)
+{
+	Zombie*	z;
 
-class	Zombie {
-
-public :
-	Zombie();
-	Zombie(std::string name);
-	void		announce();
-	~Zombie();
-
-private :
-	std::string	name;
-	
-};
-
-Zombie*		newZombie(std::string name);
-void		randomChump(std::string name);
-
-#endif
+	try
+	{
+		z = new Zombie[n];
+	}
+	catch (std::bad_alloc& ba)
+	{
+		std::cerr << "bad_alloc caught: " << ba.what() << '\n';
+		exit (1);
+	}
+	for (int i = 0; i < n; i++)
+		z[i].set_name(name);
+	return (z);
+}

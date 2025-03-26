@@ -6,7 +6,7 @@
 /*   By: alama <alama@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 16:59:29 by alama             #+#    #+#             */
-/*   Updated: 2025/03/26 18:27:43 by alama            ###   ########.fr       */
+/*   Updated: 2025/03/26 20:49:33 by alama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,6 @@ Zombie::Zombie(std::string name) : name(name)  {} ;
 void	Zombie::announce(void)
 {
 	std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
-
-
-std::string	Zombie::get_name(void)
-{
-	return (this->name);
 }
 
 Zombie::~Zombie(void)
