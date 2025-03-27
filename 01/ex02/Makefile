@@ -6,17 +6,17 @@
 #    By: alama <alama@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/22 16:00:40 by alama             #+#    #+#              #
-#    Updated: 2025/03/26 21:39:18 by alama            ###   ########.fr        #
+#    Updated: 2025/03/27 16:09:17 by alama            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = horde_zombie
+NAME = brain_ref
 
 CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp Zombie.cpp zombieHorde.cpp 
+SRC = main.cpp 
 
 OBJ = $(SRC:.cpp=.o)
 
