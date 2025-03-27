@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alama <alama@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/26 16:59:29 by alama             #+#    #+#             */
-/*   Updated: 2025/03/27 17:41:21 by alama            ###   ########.fr       */
+/*   Created: 2025/03/27 17:31:06 by alama             #+#    #+#             */
+/*   Updated: 2025/03/27 20:32:15 by alama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Weapon.hpp"
+#include <iostream>
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
-Zombie::Zombie(void)
+int	main(void)
 {
-	this->name = "";
-}
+	Weapon	w("coucou");
 
-Zombie::Zombie(std::string name) : name(name)  {} ;
+	std::cout << w.getType() << '\n';
 
-void	Zombie::announce(void)
-{
-	std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
+	HumanA	a;
+	HumanA	abis("bob", w);
 
-void	Zombie::set_name(std::string name)
-{
-	this->name = name;
-}
+	a.attack();
+	abis.attack();
 
-Zombie::~Zombie(void)
-{
-	std::cout << this->name << ": die." << std::endl;
+	HumanB	b;
+	HumanB	bis("coucou");
+
+	b.attack();
+	bis.attack();
 }

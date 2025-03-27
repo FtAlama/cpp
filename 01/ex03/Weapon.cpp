@@ -1,35 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alama <alama@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/26 16:59:29 by alama             #+#    #+#             */
-/*   Updated: 2025/03/27 17:41:21 by alama            ###   ########.fr       */
+/*   Created: 2025/03/27 18:10:17 by alama             #+#    #+#             */
+/*   Updated: 2025/03/27 18:18:57 by alama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Weapon.hpp"
 
-Zombie::Zombie(void)
-{
-	this->name = "";
-}
+Weapon::Weapon(void) : type("default weapon") {};
 
-Zombie::Zombie(std::string name) : name(name)  {} ;
+Weapon::Weapon(std::string type) : type(type) {};
 
-void	Zombie::announce(void)
-{
-	std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
+std::string	Weapon::getType() { return this->type; };
 
-void	Zombie::set_name(std::string name)
-{
-	this->name = name;
-}
-
-Zombie::~Zombie(void)
-{
-	std::cout << this->name << ": die." << std::endl;
-}
+void	Weapon::setType(std::string type) { this->type = type; };
