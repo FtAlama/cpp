@@ -6,7 +6,7 @@
 /*   By: alama <alama@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 20:16:32 by alama             #+#    #+#             */
-/*   Updated: 2025/03/27 20:45:07 by alama            ###   ########.fr       */
+/*   Updated: 2025/04/01 16:01:07 by alama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ HumanB::HumanB(std::string name, Weapon *w) : w(w), name(name) {}
 
 void	HumanB::attack(void)
 {
-	if (!w)
+	if (!this->w)
 		std::cout << this->name << " dont have a weapon" << '\n';
 	else
 	{
@@ -29,4 +29,4 @@ void	HumanB::attack(void)
 	}
 }
 
-void	setWeapon(Weapon w) { this->w = w; }
+void	HumanB::setWeapon(Weapon &w) { this->w = &w; }

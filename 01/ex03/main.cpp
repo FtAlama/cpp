@@ -6,7 +6,7 @@
 /*   By: alama <alama@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 17:31:06 by alama             #+#    #+#             */
-/*   Updated: 2025/03/27 20:32:15 by alama            ###   ########.fr       */
+/*   Updated: 2025/04/01 16:09:00 by alama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,27 @@
 
 int	main(void)
 {
-	Weapon	w("coucou");
+	Weapon	w("Famas, kalash, bereta sur la ble-ta, mtn on aimerais savoir");
+	//Weapon	w("Famas ");
 
 	std::cout << w.getType() << '\n';
 
-	HumanA	a;
+	HumanA	aa;
+	HumanA	a("pop");
 	HumanA	abis("bob", w);
 
 	a.attack();
+	aa.attack();
 	abis.attack();
 
 	HumanB	b;
-	HumanB	bis("coucou");
+	HumanB	bis("bit");
 
+	b.attack();
+	bis.attack();
+
+	b.setWeapon(w);
+	bis.setWeapon(w);
 	b.attack();
 	bis.attack();
 }

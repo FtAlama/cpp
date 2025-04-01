@@ -6,7 +6,7 @@
 /*   By: alama <alama@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 18:22:07 by alama             #+#    #+#             */
-/*   Updated: 2025/03/27 20:29:24 by alama            ###   ########.fr       */
+/*   Updated: 2025/04/01 16:08:46 by alama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include "Weapon.hpp"
+
+static Weapon		tmp;
 
 class HumanA {
 
@@ -27,7 +29,6 @@ public:
 private:
 	std::string	name;
 	Weapon		&w;
-	Weapon		tmp;
 };
 
 #endif

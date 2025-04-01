@@ -6,7 +6,7 @@
 /*   By: alama <alama@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 20:09:21 by alama             #+#    #+#             */
-/*   Updated: 2025/03/27 20:45:01 by alama            ###   ########.fr       */
+/*   Updated: 2025/04/01 16:01:05 by alama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ public:
 	HumanB();
 	HumanB(std::string name);
 	HumanB(std::string name, Weapon *w);
-	void	setWeapon(Weapon *w);
+	void	setWeapon(Weapon &w);
 	void	attack();
 
 private:
-	std::string	name;
 	Weapon		*w;
+	std::string	name;
 
 };
 
