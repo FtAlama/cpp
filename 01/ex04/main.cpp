@@ -5,40 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: alama <alama@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/27 17:31:06 by alama             #+#    #+#             */
-/*   Updated: 2025/04/01 16:45:51 by alama            ###   ########.fr       */
+/*   Created: 2025/04/01 16:45:20 by alama             #+#    #+#             */
+/*   Updated: 2025/04/03 18:29:01 by alama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
-#include <iostream>
-#include "HumanA.hpp"
-#include "HumanB.hpp"
+#include "fd_replace.hpp"
 
-int	main(void)
+int	main(int argc, char *argv[])
 {
-	Weapon	w("Famas, kalash, bereta sur la ble-ta, mtn on aimerais savoir");
-	//Weapon	w("Famas ");
-
-	std::cout << w.getType() << '\n';
-
-	HumanA	aa;
-	HumanA	a("pop");
-	HumanA	abis("bob", w);
-
-	a.attack();
-	aa.attack();
-	abis.attack();
-
-	HumanB	b;
-	HumanB	bis("bit");
-
-	b.attack();
-	bis.attack();
-
-	b.setWeapon(w);
-	bis.setWeapon(w);
-	b.attack();
-	bis.attack();
+	if (argc != 4)
+		std::cout << "need only 3 arguments" << '\n';
+	else
+	{
+		std::ifstream	*myfile = ft_openFile(argv[1]);
+		if (myfile == NULL)
+			return (1);
+		std::string content = copyfile(myfile);
+		content = replaceAll(content, argv[2], argv[3]);
+		myfile->close();
+		delete myfile;
+		replaceFile(content, argv[1]);
+	}
 	return (0);
 }

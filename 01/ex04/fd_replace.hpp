@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*   fd_replace.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alama <alama@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/27 18:21:44 by alama             #+#    #+#             */
-/*   Updated: 2025/04/01 17:24:02 by alama            ###   ########.fr       */
+/*   Created: 2025/04/01 16:56:41 by alama             #+#    #+#             */
+/*   Updated: 2025/04/03 18:29:03 by alama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
+#ifndef	__FD_REPLACE_H__
+# define __FD_REPLACE_H__
 
-HumanA::HumanA() : name("HumanA"), w(tmp) {}
+#include <string>
+#include <iostream>
+#include <fstream>
 
-HumanA::HumanA(std::string name) : name(name), w(tmp) {}
+std::ifstream	*ft_openFile(char *str);
+std::string	copyfile(std::ifstream	*fd);
+std::string	replaceAll(std::string str, std::string s1, std::string s2);
+void		replaceFile(std::string str, std::string name);
 
-HumanA::HumanA(std::string name, Weapon &w) : name(name), w(w) {}
-
-void	HumanA::attack(void)
-{
-	std::cout << this->name << " attacks with their " << this->w.getType() << '\n';
-}
+#endif
