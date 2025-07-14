@@ -61,7 +61,7 @@ void	replaceFile(std::string str, std::string name)
 	name.append(".replace");
 	std::fstream file;
 	file.open(name.c_str(), std::ios::out);
-	if (file != NULL)
+	if (file.is_open())
 		file << str;
 	else
 		std::cerr << "Unable to open replace file\n";

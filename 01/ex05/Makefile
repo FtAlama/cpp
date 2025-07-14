@@ -10,13 +10,13 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = sed_for_L 
+NAME = Harl
 
 CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
-SRC = main.cpp fd_replace.cpp
+SRC = main.cpp harl.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
