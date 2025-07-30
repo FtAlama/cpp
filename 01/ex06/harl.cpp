@@ -56,22 +56,13 @@ stringCode	Harl::hashString(std::string word)
 
 void	Harl::complain(std::string word)
 {
-	switch (hashString(word)) {
+	switch (hashString(word)) {	
 		case 0:
-			this->debug();
-			this->info();
-			this->warning();
-			this->error();
-			break;
+			this->debug();	// fall through
 		case 1:
-			this->info();
-			this->warning();
-			this->error();
-			break;
+			this->info();	// fall through
 		case 2:
-			this->warning();
-			this->error();
-			break;
+			this->warning();	// fall through
 		case 3:
 			this->error();
 			break;

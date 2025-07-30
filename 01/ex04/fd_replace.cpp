@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "fd_replace.hpp"
+#include <cstddef>
 
 std::ifstream	*ft_openFile(char *str)
 {
