@@ -36,7 +36,7 @@ void	Fixed::setRawBits(int const raw)
 	this->number_value = raw;
 }
 
-float	Fixed::toFloat() const
+float Fixed::toFloat() const
 {
 	return ((float)this->number_value / (float)(1 << this->fractional_bits));
 }
