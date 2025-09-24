@@ -14,7 +14,7 @@ public:
   virtual void attack(const std::string &);
   void takeDamage(unsigned int);
   void beRepaired(unsigned int);
-	std::string get_name() const;
+  std::string get_name() const;
   unsigned int get_hit() const;
   unsigned int get_energy() const;
   unsigned int get_attck() const;
