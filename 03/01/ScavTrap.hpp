@@ -11,10 +11,11 @@ public:
   ScavTrap &operator=(const ScavTrap &);
   ~ScavTrap();
   void guardGate();
-  void attack(const std::string &);
+  void attack();
+	using ClapTrap::attack;
 
 private:
-  void init_value();
+  inline void init_value();
 };
 
 #endif

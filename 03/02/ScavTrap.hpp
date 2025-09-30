@@ -11,7 +11,8 @@ public:
   ScavTrap &operator=(const ScavTrap &);
   ~ScavTrap();
   void guardGate();
-  void attack(const std::string &);
+  void attack();
+	using ClapTrap::attack;
 
 private:
   inline void init_value();
