@@ -19,8 +19,9 @@ Brain &Brain::operator=(const Brain &other) {
 }
 
 Brain::~Brain() {
-  std::cout << "*The brain stop...\n What was the last thought ?\n Maybe some "
-            << "great memorys or maybe some fear of dead*\n";
+  std::cout
+      << "* The brain stop...\n  What was the last thought ?\n  Maybe some "
+      << "great memories or maybe the fear of dead... *\n";
 }
 
 std::string Brain::get_ideas(unsigned int index) const {
@@ -29,8 +30,8 @@ std::string Brain::get_ideas(unsigned int index) const {
   return (this->ideas[index]);
 }
 
-void	Brain::set_ideas(unsigned int index, const std::string thaught) {
-	if (index >= 100)
-		std::cout << "The think is not that clear... please think less\n";
-	this->ideas[index] = thaught;
+void Brain::set_ideas(unsigned int index, const std::string thaught) {
+  if (index >= 100)
+    std::cout << "The think is not that clear... please think less\n";
+  this->ideas[index] = thaught;
 }

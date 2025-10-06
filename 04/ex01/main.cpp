@@ -4,23 +4,22 @@
 #include <iostream>
 
 int main(void) {
-  Animal am;
-  am.makeSound();
-  Animal *a = new Dog();
-  a->makeSound();
   Dog d;
   d.makeSound();
-  Dog dogo(d);
+  Dog dogo;
+  dogo = d;
   dogo.makeSound();
 
-  Cat lila;
-  lila.makeSound();
-  std::cout << "get type : " << lila.get_type() << std::endl;
-  std::cout << "get type : " << a->get_type() << std::endl;
-  std::cout << "get type : " << am.get_type() << std::endl;
-  delete a;
-
-	const Animal abc;
-
-	abc.makeSound();
+  Animal *animal[10];
+  for (unsigned int i = 0; i < 10; i++) {
+    if (i % 2 == 0)
+      animal[i] = new Dog();
+    else
+      animal[i] = new Cat();
+		std::cout << std::endl;
+  }
+  for (unsigned int i = 0; i < 10; i++) {
+  	delete animal[i];
+		std::cout << std::endl;
+	}
 }

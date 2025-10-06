@@ -9,7 +9,7 @@ Animal::Animal(const Animal &other) : type(other.get_type()) {
 
 Animal &Animal::operator=(const Animal &other) {
   if (this != &other)
-    this->type = other.get_type();
+    this->type = other.type;
   std::cout << "Animal affection operator called\n";
   return (*this);
 }

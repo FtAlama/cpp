@@ -6,13 +6,15 @@ Dog::Dog() : Animal("Dog"), cerebrum(new Brain()) {
   std::cout << "Dog constructor called\n";
 }
 
-Dog::Dog(const Dog &other) : Animal(other) {
+Dog::Dog(const Dog &other) : Animal(other), cerebrum(new Brain(*other.cerebrum)) {
   std::cout << "Dog copy constructor called\n";
 }
 
 Dog &Dog::operator=(const Dog &other) {
-  Animal::operator=(other);
   std::cout << "Dog affection operator called\n";
+  Animal::operator=(other);
+	delete this->cerebrum;
+	this->cerebrum = new Brain(*other.cerebrum);
   return (*this);
 }
 
