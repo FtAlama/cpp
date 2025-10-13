@@ -1,39 +1,32 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: alama <alama@student.s19.be>               +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/02/22 22:52:59 by alama             #+#    #+#              #
-#    Updated: 2025/03/11 21:14:14 by alama            ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
-NAME = Exe_Account
+NAME = account_test
 
 CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = tests.cpp Account.cpp
+SRC = tests.cpp Account.cpp 
 
-OBJ = $(SRC:.cpp=.o)
+OBJ = $(SRC:%.cpp=$(OBJ_DIR)/%.o)
+
+OBJ_DIR = build
 
 all : $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME) 
 
-%.o: %.cpp
-	$(CC) $(CFLAGS) -c $< -o $@
+$(OBJ_DIR)/%.o: %.cpp | $(OBJ_DIR)
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
 
 clean :
-	@rm -f $(OBJ)
+	@rm -rf $(OBJ_DIR)
 
 fclean : clean
-	@rm -f $(NAME)
+	@rm -rf $(NAME)
 
-re : fclean $(NAME)
+re : fclean all
 
 .PHONY: all fclean clean re

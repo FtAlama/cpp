@@ -19,10 +19,12 @@
 # include "Contact.hpp"
 # include <cstdlib>
 
+#define NUMBER 8
+
 class	PhoneBook
 {
 	private:
-		Contact		my_contact[8];
+		Contact		my_contact[NUMBER];
 		void		search(int i);
 
 	public:

@@ -65,30 +65,23 @@ void	PhoneBook::routine(void)
 {
 	std::string	usr_input ("");
 	int		i;
-	int		tmp;
 
 	i = 0;
-	tmp = 0;
 	do
 	{
 		std::cout <<  "pls type ADD, SEARCH or EXIT : ";
 		ft_getline(usr_input);
 		if (usr_input.compare("ADD") == 0)
 		{
-			if (i >= 8)
-			{
-				tmp = i;
-				i = 0;
-			}
-			this->my_contact[i].AddContact(i);
+			this->my_contact[i % NUMBER].AddContact(i % NUMBER);
 			i++;
 		}
 		if (usr_input.compare("SEARCH") == 0)
 		{
-			if (tmp > i)
-				search(tmp);
-			else
+			if (i < NUMBER)
 				search(i);
+			else
+				search(NUMBER);
 		}
 	} while (usr_input.compare("EXIT") != 0);
 }

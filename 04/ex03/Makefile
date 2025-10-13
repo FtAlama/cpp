@@ -1,10 +1,10 @@
-NAME = phoneBook
+NAME = not_interface
 
 CC = c++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
-SRC = Contact.cpp PhoneBook.cpp main.cpp
+SRC = main.cpp AMateria.cpp Ice.cpp Cure.cpp Character.cpp
 
 OBJ = $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 
