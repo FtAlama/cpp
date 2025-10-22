@@ -1,4 +1,5 @@
 #include "Harl.hpp"
+#include <iostream>
 
 Harl::Harl() {}
 
@@ -13,15 +14,15 @@ void	Harl::debug()
 
 void	Harl::info()
 {
-	std::cout << "I cannot believe adding extra bacon costs more money."
-	<< "You didn’t put enough bacon in my burger! "
+	std::cout << "I cannot believe adding extra bacon costs more money.\n"
+	<< "You didn’t put enough bacon in my burger!\n"
 	<< "If you did, I wouldn’t be asking for more!" << std::endl;
 }
 
 void	Harl::warning()
 {
-	std::cout <<  "think I deserve to have some extra bacon for free."
-	<< "I’ve been coming for years, whereas you started working"
+	std::cout <<  "think I deserve to have some extra bacon for free.\n"
+	<< "I’ve been coming for years, whereas you started working\n"
 	<< "here just last month." << std::endl;
 }
 
@@ -44,7 +45,7 @@ void	Harl::complain(std::string word)
 			return ;
 		}
 	}
-	std::cout << "Seriously? I’ve been a loyal customer forever, "
-		<< "and you expect me to pay extra for something that " 
+	std::cout << "Seriously? I’ve been a loyal customer forever,\n"
+		<< "and you expect me to pay extra for something that\n" 
 		<< "should already be included? This is ridiculous!" << std::endl;
 }

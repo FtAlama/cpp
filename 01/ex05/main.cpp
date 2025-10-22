@@ -1,4 +1,6 @@
 #include "Harl.hpp"
+#include <cstdlib>
+#include <iostream>
 
 static void	ft_getline(std::string &str)
 {

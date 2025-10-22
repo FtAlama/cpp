@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
+#include <iostream>
 
 HumanA::HumanA() : name("HumanA"), w(tmp) {}
 
@@ -20,5 +21,5 @@ HumanA::HumanA(std::string name, Weapon &w) : name(name), w(w) {}
 
 void	HumanA::attack(void)
 {
-	std::cout << this->name << " attacks with their " << this->w.getType() << '\n';
+	std::cout << this->name << " attacks with " << this->w.getType() << '\n';
 }

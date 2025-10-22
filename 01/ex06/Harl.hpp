@@ -2,7 +2,6 @@
 #define HARL_H
 
 #include <string>
-#include <iostream>
 
 enum stringCode {
 	DEBUG,
@@ -24,7 +23,6 @@ private:
 	void				warning();
 	void				error();
 	void				default_msg();
-	stringCode	hashString(std::string word);
 };
 
 #endif 

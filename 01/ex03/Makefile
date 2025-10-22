@@ -1,39 +1,32 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: alama <alama@student.s19.be>               +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/02/22 16:00:40 by alama             #+#    #+#              #
-#    Updated: 2025/03/27 20:12:24 by alama            ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
-NAME = HumansFight
+NAME = humansFight
 
 CC = c++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98 
 
 SRC = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 
-OBJ = $(SRC:.cpp=.o)
+OBJ = $(SRC:%.cpp=$(OBJ_DIR)/%.o)
+
+OBJ_DIR = build
 
 all : $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME) 
 
-%.o: %.cpp
-	$(CC) $(CFLAGS) -c $< -o $@
+$(OBJ_DIR)/%.o: %.cpp | $(OBJ_DIR)
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
 
 clean :
-	@rm -f $(OBJ)
+	@rm -rf $(OBJ_DIR)
 
 fclean : clean
-	@rm -f $(NAME)
+	@rm -rf $(NAME)
 
-re : fclean $(NAME)
+re : fclean all
 
 .PHONY: all fclean clean re

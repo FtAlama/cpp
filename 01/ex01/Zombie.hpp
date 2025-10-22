@@ -10,27 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	__ZOMBIE_H__
-#define	__ZOMBIE_H__
+#ifndef __ZOMBIE_H__
+#define __ZOMBIE_H__
 
-#include <string>
-#include <iostream>
 #include <cstdlib>
+#include <string>
 
-class	Zombie {
+class Zombie {
 
-public :
-	Zombie();
-	Zombie(std::string name);
-	void		announce();
-	void		set_name(std::string name);
-	~Zombie();
+public:
+  Zombie();
+  Zombie(std::string name);
+  void announce();
+  void set_name(std::string name);
+  ~Zombie();
 
-private :
-	std::string	name;
-	
+private:
+  std::string name;
 };
 
-Zombie*	zombieHorde(int n, std::string name);
+Zombie *zombieHorde(int n, std::string name);
 
 #endif

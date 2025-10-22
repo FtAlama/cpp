@@ -10,16 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	__FD_REPLACE_H__
-# define __FD_REPLACE_H__
+#ifndef __FD_REPLACE_H__
+#define __FD_REPLACE_H__
 
-#include <string>
-#include <iostream>
 #include <fstream>
+#include <string>
 
-std::ifstream	*ft_openFile(char *str);
-std::string	copyfile(std::ifstream	*fd);
-std::string	replaceAll(std::string str, std::string s1, std::string s2);
-void		replaceFile(std::string str, std::string name);
+std::ifstream *ft_openFile(char *str);
+std::string copyfile(std::ifstream *fd);
+std::string replaceAll(std::string str, std::string s1, std::string s2);
+void replaceFile(std::string str, std::string name);
 
 #endif

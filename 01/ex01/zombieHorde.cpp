@@ -11,21 +11,22 @@
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+#include <iostream>
 
-Zombie*	zombieHorde(int n, std::string name)
-{
-	Zombie*	z;
+Zombie *zombieHorde(int n, std::string name) {
+  Zombie *z;
 
-	try
-	{
-		z = new Zombie[n];
-	}
-	catch (std::bad_alloc& ba)
-	{
-		std::cerr << "bad_alloc caught: " << ba.what() << '\n';
-		exit (1);
-	}
-	for (int i = 0; i < n; i++)
-		z[i].set_name(name);
-	return (z);
+  if (name.empty()) {
+    std::cerr << "Please enter a valid name\n";
+    return (NULL);
+  }
+  try {
+    z = new Zombie[n];
+  } catch (std::bad_alloc &ba) {
+    std::cerr << "bad_alloc caught: " << ba.what() << '\n';
+    exit(1);
+  }
+  for (int i = 0; i < n; i++)
+    z[i].set_name(name);
+  return (z);
 }

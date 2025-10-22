@@ -17,13 +17,12 @@
 
 int	main(void)
 {
-	Weapon	w("Famas, kalash, bereta sur la ble-ta, mtn on aimerais savoir");
-	//Weapon	w("Famas ");
+	Weapon	w("excalibur");
 
 	std::cout << w.getType() << '\n';
 
-	HumanA	aa;
 	HumanA	a("pop");
+	HumanA	aa;
 	HumanA	abis("bob", w);
 
 	a.attack();
@@ -31,7 +30,7 @@ int	main(void)
 	abis.attack();
 
 	HumanB	b;
-	HumanB	bis("bit");
+	HumanB	bis("coc");
 
 	b.attack();
 	bis.attack();
@@ -40,5 +39,23 @@ int	main(void)
 	bis.setWeapon(w);
 	b.attack();
 	bis.attack();
+
+	std::cout << "\n\n\n";
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	}
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
+
 	return (0);
 }

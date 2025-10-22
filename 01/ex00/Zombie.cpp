@@ -11,17 +11,9 @@
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+#include <iostream>
 
-Zombie::Zombie(void)
-{
-	std::cout << "pls give a name to the ZomBie : ";
-	getline(std::cin, this->name);
-	if (std::cin.eof() == true)
-	{
-		std::cout << std::endl << "You just ctrl + D" << std::endl;
-		exit(0);
-	}
-}
+Zombie::Zombie(void) : name("patrik") {}
 
 Zombie::Zombie(std::string name) : name(name)  {} ;
 

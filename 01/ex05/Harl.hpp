@@ -2,7 +2,6 @@
 #define HARL_H
 
 #include <string>
-#include <iostream>
 
 class Harl {
 public:

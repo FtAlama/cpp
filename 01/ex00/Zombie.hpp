@@ -14,9 +14,7 @@
 #define	__ZOMBIE_H__
 
 #include <string>
-#include <iostream>
 #include <cstdlib>
-#include <new>
 
 class	Zombie {
 

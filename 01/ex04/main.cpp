@@ -11,21 +11,20 @@
 /* ************************************************************************** */
 
 #include "fd_replace.hpp"
+#include <iostream>
 
-int	main(int argc, char *argv[])
-{
-	if (argc != 4)
-		std::cout << "need only 3 arguments" << '\n';
-	else
-	{
-		std::ifstream	*myfile = ft_openFile(argv[1]);
-		if (myfile == NULL)
-			return (1);
-		std::string content = copyfile(myfile);
-		content = replaceAll(content, argv[2], argv[3]);
-		myfile->close();
-		delete myfile;
-		replaceFile(content, argv[1]);
-	}
-	return (0);
+int main(int argc, char *argv[]) {
+  if (argc != 4)
+    std::cout << "need only 3 arguments" << '\n';
+  else {
+    std::ifstream *myfile = ft_openFile(argv[1]);
+    if (myfile == NULL)
+      return (1);
+    std::string content = copyfile(myfile);
+    content = replaceAll(content, argv[2], argv[3]);
+    myfile->close();
+    delete myfile;
+    replaceFile(content, argv[1]);
+  }
+  return (0);
 }

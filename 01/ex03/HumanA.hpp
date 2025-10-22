@@ -13,7 +13,6 @@
 #ifndef	__HUMAN_A_H__
 #define __HUMAN_A_H__
 
-#include <iostream>
 #include "Weapon.hpp"
 
 static Weapon		tmp;

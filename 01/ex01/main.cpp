@@ -12,17 +12,17 @@
 
 #include "Zombie.hpp"
 
-int	main(void)
-{
-	Zombie*	z;
-	int	a;
+int main(void) {
+  Zombie *z;
+  int a;
 
-	a = 90;
-	z = zombieHorde(a, "zzz");
+  a = 2;
+  z = zombieHorde(a, "coucou");
 
-	for (int i = 0; i < a; i++)
-	{
-		z[i].announce();
-	}
-	delete [] z;
+  if (!z)
+    return (1);
+  for (int i = 0; i < a; i++) {
+    z[i].announce();
+  }
+  delete[] z;
 }
