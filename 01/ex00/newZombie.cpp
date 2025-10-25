@@ -23,6 +23,7 @@ Zombie*	newZombie(std::string name)
 	catch (std::bad_alloc& ba)
 	{
 		std::cerr << "bad_alloc caugth: " << ba.what() << std::endl;
+		return (NULL);
 	}
 	return (z);
 }

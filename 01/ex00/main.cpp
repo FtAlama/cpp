@@ -16,6 +16,8 @@ int	main(void)
 {
 	randomChump("aha");
 	Zombie*	z = newZombie("Yannis");
+	if  (!z)
+		return (1);
 	z->announce();
 	delete z;
 }

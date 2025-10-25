@@ -11,13 +11,11 @@ Character::Character(std::string const &name) : name(name), index(0) {
   std::cout << "Character " << this->name << " constructor called\n";
 }
 
-Character::~Character() {
-  std::cout << "Character " << this->name << " destructor called\n";
-}
-
 Character::Character(Character const &clone)
     : name(clone.name), index(clone.index) {
   std::cout << "Copy constructor called\n";
+	for (unsigned int i = 0; i < clone.index; i++)
+		this->m[i] = clone.m[i];
 }
 
 Character &Character::operator=(Character const &clone) {
@@ -25,6 +23,8 @@ Character &Character::operator=(Character const &clone) {
   if (this != &clone) {
     this->name = clone.name;
     this->index = clone.index;
+		for (unsigned int i = 0; i < clone.index; i++)
+			this->m[i] = clone.m[i];
   }
   return (*this);
 }
@@ -64,4 +64,8 @@ void Character::use(int index, ICharacter &target) {
                 << " don't have a spell in the slot " << index << std::endl;
     }
   }
+}
+
+Character::~Character() {
+  std::cout << "Character " << this->name << " destructor called\n";
 }
