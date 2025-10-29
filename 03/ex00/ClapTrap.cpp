@@ -18,7 +18,7 @@ ClapTrap::ClapTrap(const ClapTrap &other)
 }
 
 ClapTrap::~ClapTrap() {
-  std::cout << "ClapTrap " << name << "destructor called\n";
+  std::cout << "ClapTrap " << name << " destructor called\n";
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &other) {
@@ -71,13 +71,12 @@ void ClapTrap::takeDamage(unsigned int amount) {
   if (hit_point <= 0)
     std::cout << "ClapTrap " << name << " has no more hp, he's dead\n";
   if (this->hit_point > 0 && this->energy_point > 0) {
-    std::cout << "ClapTrap " << name << " got hit " << amount
+    std::cout << "ClapTrap " << name << " got hit : " << amount
               << " points of life\n";
+    hit_point -= amount;
     if (hit_point <= amount) {
       std::cout << "ClapTrap " << name << " is dead\n";
       hit_point = 0;
-    } else {
-      hit_point -= amount;
     }
   }
 }

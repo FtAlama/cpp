@@ -73,11 +73,10 @@ void ClapTrap::takeDamage(unsigned int amount) {
   if (this->hit_point > 0 && this->energy_point > 0) {
     std::cout << "ClapTrap " << name << " got hit " << amount
               << " points of life\n";
+    hit_point -= amount;
     if (hit_point <= amount) {
       std::cout << "ClapTrap " << name << " is dead\n";
       hit_point = 0;
-    } else {
-      hit_point -= amount;
-    }
+    } 
   }
 }

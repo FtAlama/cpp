@@ -2,7 +2,6 @@
 
 #define DIAMOND_TRAP_HPP
 
-#include "ClapTrap.hpp"
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 

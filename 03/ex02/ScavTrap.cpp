@@ -36,8 +36,8 @@ void ScavTrap::attack() {
   if (hit_point <= 0)
     std::cout << "ScavTrap " << name << " has no more hp, he's dead\n";
   if (this->hit_point > 0 && this->energy_point > 0) {
-    std::cout << "ScavTrap " << name << "attack causing "
-              << attck_dmg << " points of dammage\n";
+    std::cout << "ScavTrap " << name << " attack causing " << attck_dmg
+              << " points of dammage\n";
     --this->energy_point;
   }
 }

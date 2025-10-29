@@ -1,10 +1,13 @@
-#include "ClapTrap.hpp"
 #include "DiamondTrap.hpp"
+#include <iostream>
 
 int main(void) {
 	DiamondTrap d("player");
+	std::cout << std::endl;
 	d.whoAmI();
+	std::cout << std::endl;
 	d.attack();
-	ScavTrap p;
+	std::cout << std::endl;
+	DiamondTrap dd;
 	return (0);
 }

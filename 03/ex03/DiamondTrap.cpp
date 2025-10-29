@@ -10,7 +10,6 @@ void DiamondTrap::init_value() {
 }
 
 DiamondTrap::DiamondTrap() : name("shinny") {
-  this->name = "shinny";
   ClapTrap::name = name + "_clap_name";
   init_value();
   std::cout << "DiamondTrap " << name << " constructor called\n";
